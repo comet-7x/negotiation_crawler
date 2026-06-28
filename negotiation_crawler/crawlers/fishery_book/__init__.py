@@ -36,9 +36,9 @@ class FisheryBookCrawler(BaseCrawler):
 
         settings = Settings(
             out_dir=out,
-            pdf_dir=out / "pdf",
-            db_path=out / "manifest.sqlite3",
-            xlsx_path=out / "fishery_books_audit.xlsx",
+            pdf_dir=out / "pdfs",
+            db_path=out / "manifest.sqlite",
+            xlsx_path=out / "index.xlsx",
             concurrency=concurrency,
             download=not no_download,
             http2=not http1,

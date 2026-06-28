@@ -38,7 +38,7 @@ class IotcCrawler(BaseCrawler):
 
         db_path   = out / "manifest.sqlite"
         pdf_dir   = out / "pdfs"
-        xlsx_path = out / "iotc_documents.xlsx"
+        xlsx_path = out / "index.xlsx"
 
         try:
             xlsx_only = build_xlsx and not enrich and not list_only

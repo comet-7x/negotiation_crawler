@@ -59,6 +59,15 @@ class WtoSiteCrawler(BaseCrawler):
             run_seeds = seeds if seeds else config.SEEDS
             asyncio.run(crawler.run(run_seeds))
             log.info("done. kept=%d", crawler.kept)
+
+            try:
+                from .process import build_xlsx
+                xlsx = build_xlsx(out)
+                if xlsx:
+                    log.info("xlsx -> %s", xlsx)
+            except Exception as exc:
+                log.warning("xlsx build failed (non-fatal): %s", exc)
+
             return CrawlResult(success=True, output_dir=str(out))
         except Exception as exc:
             return CrawlResult(success=False, output_dir=str(out), error=str(exc))

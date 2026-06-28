@@ -1,0 +1,1850 @@
+[
+  {
+    "category": "SOFIA",
+    "year": 2026,
+    "title": "The State of World Fisheries and Aquaculture 2026",
+    "edition_note": "Blue Transformation: turning vision into impact",
+    "lang": "en",
+    "exclude_terms": [
+      "in brief",
+      "regional",
+      "factsheet",
+      "summary",
+      "résumé",
+      "resumen",
+      "interactive",
+      "version of"
+    ],
+    "seed_id": "SOFIA-2026-001"
+  },
+  {
+    "category": "SOFIA",
+    "year": 2024,
+    "title": "The State of World Fisheries and Aquaculture 2024",
+    "edition_note": "Blue Transformation in action",
+    "lang": "en",
+    "exclude_terms": [
+      "in brief",
+      "regional",
+      "factsheet",
+      "summary",
+      "résumé",
+      "resumen",
+      "interactive",
+      "version of"
+    ],
+    "seed_id": "SOFIA-2024-002"
+  },
+  {
+    "category": "SOFIA",
+    "year": 2022,
+    "title": "The State of World Fisheries and Aquaculture 2022",
+    "edition_note": "Towards Blue Transformation",
+    "lang": "en",
+    "exclude_terms": [
+      "in brief",
+      "regional",
+      "factsheet",
+      "summary",
+      "résumé",
+      "resumen",
+      "interactive",
+      "version of"
+    ],
+    "seed_id": "SOFIA-2022-003"
+  },
+  {
+    "category": "SOFIA",
+    "year": 2020,
+    "title": "The State of World Fisheries and Aquaculture 2020",
+    "edition_note": "Sustainability in action",
+    "lang": "en",
+    "exclude_terms": [
+      "in brief",
+      "regional",
+      "factsheet",
+      "summary",
+      "résumé",
+      "resumen",
+      "interactive",
+      "version of"
+    ],
+    "seed_id": "SOFIA-2020-004"
+  },
+  {
+    "category": "SOFIA",
+    "year": 2018,
+    "title": "The State of World Fisheries and Aquaculture 2018",
+    "edition_note": "Meeting the sustainable development goals",
+    "lang": "en",
+    "exclude_terms": [
+      "in brief",
+      "regional",
+      "factsheet",
+      "summary",
+      "résumé",
+      "resumen",
+      "interactive",
+      "version of"
+    ],
+    "seed_id": "SOFIA-2018-005"
+  },
+  {
+    "category": "SOFIA",
+    "year": 2016,
+    "title": "The State of World Fisheries and Aquaculture 2016",
+    "edition_note": "Contributing to food security and nutrition for all",
+    "lang": "en",
+    "exclude_terms": [
+      "in brief",
+      "regional",
+      "factsheet",
+      "summary",
+      "résumé",
+      "resumen",
+      "interactive",
+      "version of"
+    ],
+    "seed_id": "SOFIA-2016-006"
+  },
+  {
+    "category": "SOFIA",
+    "year": 2014,
+    "title": "The State of World Fisheries and Aquaculture 2014",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "in brief",
+      "regional",
+      "factsheet",
+      "summary",
+      "résumé",
+      "resumen",
+      "interactive",
+      "version of"
+    ],
+    "seed_id": "SOFIA-2014-007"
+  },
+  {
+    "category": "SOFIA",
+    "year": 2012,
+    "title": "The State of World Fisheries and Aquaculture 2012",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "in brief",
+      "regional",
+      "factsheet",
+      "summary",
+      "résumé",
+      "resumen",
+      "interactive",
+      "version of"
+    ],
+    "seed_id": "SOFIA-2012-008"
+  },
+  {
+    "category": "SOFIA",
+    "year": 2010,
+    "title": "The State of World Fisheries and Aquaculture 2010",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "in brief",
+      "regional",
+      "factsheet",
+      "summary",
+      "résumé",
+      "resumen",
+      "interactive",
+      "version of"
+    ],
+    "seed_id": "SOFIA-2010-009"
+  },
+  {
+    "category": "SOFIA",
+    "year": 2008,
+    "title": "The State of World Fisheries and Aquaculture 2008",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "in brief",
+      "regional",
+      "factsheet",
+      "summary",
+      "résumé",
+      "resumen",
+      "interactive",
+      "version of"
+    ],
+    "seed_id": "SOFIA-2008-010"
+  },
+  {
+    "category": "SOFIA",
+    "year": 2006,
+    "title": "The State of World Fisheries and Aquaculture 2006",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "in brief",
+      "regional",
+      "factsheet",
+      "summary",
+      "résumé",
+      "resumen",
+      "interactive",
+      "version of"
+    ],
+    "seed_id": "SOFIA-2006-011"
+  },
+  {
+    "category": "SOFIA",
+    "year": 2004,
+    "title": "The State of World Fisheries and Aquaculture 2004",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "in brief",
+      "regional",
+      "factsheet",
+      "summary",
+      "résumé",
+      "resumen",
+      "interactive",
+      "version of"
+    ],
+    "seed_id": "SOFIA-2004-012"
+  },
+  {
+    "category": "SOFIA",
+    "year": 2002,
+    "title": "The State of World Fisheries and Aquaculture 2002",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "in brief",
+      "regional",
+      "factsheet",
+      "summary",
+      "résumé",
+      "resumen",
+      "interactive",
+      "version of"
+    ],
+    "seed_id": "SOFIA-2002-013"
+  },
+  {
+    "category": "SOFIA",
+    "year": 2000,
+    "title": "The State of World Fisheries and Aquaculture 2000",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "in brief",
+      "regional",
+      "factsheet",
+      "summary",
+      "résumé",
+      "resumen",
+      "interactive",
+      "version of"
+    ],
+    "seed_id": "SOFIA-2000-014"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2006,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2006",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2006-015"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2007,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2007",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2007-016"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2008,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2008",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2008-017"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2009,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2009",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2009-018"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2010,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2010",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2010-019"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2011,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2011",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2011-020"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2012,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2012",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2012-021"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2013,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2013",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2013-022"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2014,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2014",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2014-023"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2015,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2015",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2015-024"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2016,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2016",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2016-025"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2017,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2017",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2017-026"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2018,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2018",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2018-027"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2019,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2019",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2019-028"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2020,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2020",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2020-029"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2021,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2021",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2021-030"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2022,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2022",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2022-031"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2023,
+    "title": "FAO Yearbook. Fishery and Aquaculture Statistics 2023",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "fishery",
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2023-032"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2004,
+    "title": "FAO yearbook. Fishery statistics: Capture production 2004",
+    "edition_note": "pre-2006 separate volume: Capture production",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "capture"
+    ],
+    "seed_id": "Yearbook-2004-033"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2004,
+    "title": "FAO yearbook. Fishery statistics: Aquaculture production 2004",
+    "edition_note": "pre-2006 separate volume: Aquaculture production",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "aquaculture"
+    ],
+    "legacy_url": "https://openknowledge.fao.org/server/api/core/bitstreams/ca1ed3e0-28b0-4ecc-928d-aa7ac30bc30f/content",
+    "seed_id": "Yearbook-2004-034"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2004,
+    "title": "FAO yearbook. Fishery statistics: Commodities 2004",
+    "edition_note": "pre-2006 separate volume: Commodities",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "commodit"
+    ],
+    "legacy_url": "https://openknowledge.fao.org/server/api/core/bitstreams/703cdb2d-1db4-4677-8b97-2411c21fea6c/content",
+    "seed_id": "Yearbook-2004-035"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2005,
+    "title": "FAO yearbook. Fishery statistics: Capture production 2005",
+    "edition_note": "pre-2006 separate volume: Capture production",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "capture"
+    ],
+    "seed_id": "Yearbook-2005-036"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2005,
+    "title": "FAO yearbook. Fishery statistics: Aquaculture production 2005",
+    "edition_note": "pre-2006 separate volume: Aquaculture production",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "aquaculture"
+    ],
+    "seed_id": "Yearbook-2005-037"
+  },
+  {
+    "category": "Yearbook",
+    "year": 2005,
+    "title": "FAO yearbook. Fishery statistics: Commodities 2005",
+    "edition_note": "pre-2006 separate volume: Commodities",
+    "lang": "en",
+    "exclude_terms": [
+      "supplement",
+      "cd-rom",
+      "newsletter",
+      "circular",
+      "version of",
+      "report of the",
+      "session"
+    ],
+    "must_contain": [
+      "commodit"
+    ],
+    "seed_id": "Yearbook-2005-038"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2000,
+    "title": "Fisheries Management. 1. Conservation and Management of Sharks",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2000-039"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2003,
+    "title": "Fisheries management. 2. The ecosystem approach to fisheries",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2003-040"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2008,
+    "title": "Fisheries Management. 3. Managing Fishing Capacity",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2008-041"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2008,
+    "title": "Fisheries Management. 2. The Ecosystem Approach to Fisheries. 2.1 Best Practices in Ecosystem Modelling for Informing an Ecosystem Approach to Fisheries",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2008-042"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2009,
+    "title": "Fisheries Management. 2. The Ecosystem Approach to Fisheries. 2.2 The Human Dimensions of the Ecosystem Approach to Fisheries",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2009-043"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2011,
+    "title": "Fisheries Management. 4. Marine Protected Areas and Fisheries",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2011-044"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2009,
+    "title": "A Fishery Manager's Guidebook",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2009-045"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 1995,
+    "title": "Code of Conduct for Responsible Fisheries",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-1995-046"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2015,
+    "title": "Voluntary Guidelines for Securing Sustainable Small-Scale Fisheries in the Context of Food Security and Poverty Eradication",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2015-047"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2024,
+    "title": "Fisheries responses to invasive species in a changing climate",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2024-048"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2009,
+    "title": "International Guidelines for the Management of Deep-sea Fisheries in the High Seas",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "item_uuid": "c552376c-a207-46a1-a49a-91a79c213989",
+    "seed_id": "FisheriesManagement-2009-049"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 1999,
+    "title": "International Plan of Action for the Conservation and Management of Sharks",
+    "edition_note": "combined IPOA volume (expected)",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "handle": "20.500.14283/x3170e",
+    "seed_id": "FisheriesManagement-1999-050"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 1999,
+    "title": "International Plan of Action for the Management of Fishing Capacity",
+    "edition_note": "combined IPOA volume (expected)",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "handle": "20.500.14283/x3170e",
+    "seed_id": "FisheriesManagement-1999-051"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 1999,
+    "title": "International Plan of Action for Reducing Incidental Catch of Seabirds in Longline Fisheries",
+    "edition_note": "combined IPOA volume (expected)",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "handle": "20.500.14283/x3170e",
+    "seed_id": "FisheriesManagement-1999-052"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2001,
+    "title": "International Plan of Action to Prevent, Deter and Eliminate Illegal, Unreported and Unregulated Fishing",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2001-053"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2011,
+    "title": "Guidelines on Bycatch Management and Reduction of Discards",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2011-054"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2009,
+    "title": "International Guidelines for Eco-labelling of Fish and Fishery Products from Marine Capture Fisheries",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2009-055"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2011,
+    "title": "Guidelines for the Ecolabelling of Fish and Fishery Products from Inland Capture Fisheries",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2011-056"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2023,
+    "title": "Voluntary Guidelines on the Marking of Fishing Gear",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2023-057"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2020,
+    "title": "Technical Guidelines on Methodologies and Indicators for the Estimation of the Magnitude and Impact of IUU Fishing",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2020-058"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2023,
+    "title": "Guidance document: Advancing end-to-end traceability",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2023-059"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2026,
+    "title": "Checklists and Technical Guidelines to Combat IUU Fishing",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2026-060"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2024,
+    "title": "Data Preparation to Inform Assessment and Management Approaches in Data-Limited Fisheries",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2024-061"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2015,
+    "title": "Voluntary Guidelines for Flag State Performance",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2015-062"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 2009,
+    "title": "Guidelines to reduce sea turtle mortality in fishing operations",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-2009-063"
+  },
+  {
+    "category": "FisheriesManagement",
+    "year": 1993,
+    "title": "Agreement to Promote Compliance with International Conservation and Management Measures by Fishing Vessels on the High Seas",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesManagement-1993-064"
+  },
+  {
+    "category": "FisheriesTechnical",
+    "year": 2002,
+    "title": "A fishery manager's guidebook. Management Measures and Their Application",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesTechnical-2002-065"
+  },
+  {
+    "category": "FisheriesTechnical",
+    "year": 1996,
+    "title": "Fishing operations",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesTechnical-1996-066"
+  },
+  {
+    "category": "FisheriesTechnical",
+    "year": 1998,
+    "title": "Fishing Operations. 1. Vessel Monitoring Systems",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesTechnical-1998-067"
+  },
+  {
+    "category": "FisheriesTechnical",
+    "year": 2009,
+    "title": "Fishing Operations. 2. Best Practices to Reduce Incidental Catch of Seabirds in Capture Fisheries",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesTechnical-2009-068"
+  },
+  {
+    "category": "FisheriesTechnical",
+    "year": 2015,
+    "title": "Fishing Operations. 3. Best Practices to Improve Safety at Sea in the Fisheries Sector",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesTechnical-2015-069"
+  },
+  {
+    "category": "FisheriesTechnical",
+    "year": 2021,
+    "title": "Fishing Operations. 4. Guidelines to Prevent and Reduce Bycatch of Marine Mammals in Capture Fisheries",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesTechnical-2021-070"
+  },
+  {
+    "category": "FisheriesTechnical",
+    "year": 1997,
+    "title": "Aquaculture development",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesTechnical-1997-071"
+  },
+  {
+    "category": "FisheriesTechnical",
+    "year": 2001,
+    "title": "Aquaculture development. 1. Good aquaculture feed manufacturing practice",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesTechnical-2001-072"
+  },
+  {
+    "category": "FisheriesTechnical",
+    "year": 2007,
+    "title": "Aquaculture development. 2. Health management for responsible movement of live aquatic animals",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesTechnical-2007-073"
+  },
+  {
+    "category": "FisheriesTechnical",
+    "year": 2008,
+    "title": "Aquaculture development. 3. Genetic resource management",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesTechnical-2008-074"
+  },
+  {
+    "category": "FisheriesTechnical",
+    "year": 2010,
+    "title": "Aquaculture development. 4. Ecosystem approach to aquaculture",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesTechnical-2010-075"
+  },
+  {
+    "category": "FisheriesTechnical",
+    "year": 2011,
+    "title": "Aquaculture development. 5. Use of wild fish as feed in aquaculture",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesTechnical-2011-076"
+  },
+  {
+    "category": "FisheriesTechnical",
+    "year": 2011,
+    "title": "Aquaculture development. 6. Use of wild fishery resources for capture-based aquaculture",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesTechnical-2011-077"
+  },
+  {
+    "category": "FisheriesTechnical",
+    "year": 2017,
+    "title": "Aquaculture development. 7. Aquaculture governance and sector development",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesTechnical-2017-078"
+  },
+  {
+    "category": "FisheriesTechnical",
+    "year": 2019,
+    "title": "Aquaculture development. 8. Recommendations for prudent and responsible use of veterinary medicines in aquaculture",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesTechnical-2019-079"
+  },
+  {
+    "category": "FisheriesTechnical",
+    "year": 2018,
+    "title": "Aquaculture development. 9. Development of aquatic genetic resources: A framework of essential criteria",
+    "edition_note": "",
+    "lang": "en",
+    "exclude_terms": [
+      "summary",
+      "résumé",
+      "resumen",
+      "report of the expert consultation",
+      "report of the technical consultation",
+      "report of the",
+      "working paper",
+      "secretariat",
+      "review of",
+      "draft",
+      "proceedings",
+      "workshop",
+      "newsletter",
+      "circular",
+      "version of",
+      "implementation of"
+    ],
+    "seed_id": "FisheriesTechnical-2018-080"
+  }
+]

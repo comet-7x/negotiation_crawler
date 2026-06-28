@@ -1,0 +1,12 @@
+# negotiation_crawler — runtime configuration
+# All default_out paths are relative to the working directory at runtime.
+
+defaults:
+  fishery_book: "./output/fishery_books"
+  iotc: "./output/iotc"
+  wto_site: "./output/wto_site"
+  wto_docs: "./output/wto_docs"
+
+api:
+  host: "0.0.0.0"
+  port: 8000

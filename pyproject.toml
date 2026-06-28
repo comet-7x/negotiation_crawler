@@ -7,35 +7,28 @@ dependencies = [
     "fastapi>=0.111",
     "uvicorn[standard]>=0.30",
     "pyyaml>=6.0",
-    "httpx>=0.27",
+    # fishery_book
+    "httpx[http2]>=0.27",
+    "loguru>=0.7",
+    "rapidfuzz>=3.9",
+    "openpyxl>=3.1",
+    # iotc
+    "selectolax>=0.3",
+    # wto_site
+    "trafilatura>=1.12",
 ]
 
 [project.optional-dependencies]
-# Install the crawlers you actually use
-fishery-book = [
-    "httpx[http2]>=0.27",
-    "openpyxl>=3.1",
-    "pypdf>=4.2",
-    "loguru>=0.7",
-    "rapidfuzz>=3.9",
-    "selectolax>=0.3",
+pdf = [
+    "pypdf>=4.2",          # fishery_book: page count from PDF
+    "pymupdf>=1.24",       # wto_site: PDF→Markdown fallback
+    "pymupdf4llm>=0.0.17",
 ]
-iotc = [
-    "httpx>=0.27",
-    "selectolax>=0.3",
-    "openpyxl>=3.1",
-]
-wto-site = [
-    "httpx>=0.27",
-    "selectolax>=0.3",
-    "trafilatura>=1.12",
-]
-wto-docs = [
-    "playwright>=1.44",   # run: playwright install chromium
-    "httpx>=0.27",
+wto-docs-harvest = [
+    "playwright>=1.44",    # wto_docs phase 1: browser-driven search
 ]
 all = [
-    "negotiation-crawler[fishery-book,iotc,wto-site,wto-docs]",
+    "negotiation-crawler[pdf,wto-docs-harvest]",
 ]
 
 [project.scripts]

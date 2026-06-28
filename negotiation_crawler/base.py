@@ -1,5 +1,3 @@
-"""Base classes shared across all crawler modules."""
-
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
@@ -32,12 +30,8 @@ class TaskInfo:
 
 
 class BaseCrawler(ABC):
-    """All crawler modules implement this interface."""
-
-    name: str          # unique slug, e.g. "fishery_book"
-    description: str   # one-line human description
+    name: str
+    description: str
 
     @abstractmethod
-    def run(self, output_dir: str, **kwargs) -> CrawlResult:
-        """Run the crawler synchronously and return the result."""
-        ...
+    def run(self, output_dir: str | None, **kwargs) -> CrawlResult: ...

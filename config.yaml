@@ -1,0 +1,33 @@
+# negotiation_crawler — runtime configuration
+#
+# src_dir: absolute or relative path to the original crawler project directory.
+#   Relative paths are resolved relative to THIS config file's location.
+#   Override at runtime: NEGOTIATION_CRAWLER_CONFIG=/path/to/your/config.yaml
+#
+# default_out: default output directory when --out is not specified.
+#   Relative paths are resolved relative to the working directory at runtime.
+
+projects:
+  fishery_book:
+    src_dir: "/path/to/virtual_negotiation_crawler/src/fishery_book_crawler"
+    default_out: "./output/fishery_books"
+    description: "FAO fishery publications (DSpace REST API)"
+
+  iotc:
+    src_dir: "/path/to/virtual_negotiation_crawler/src/iotc_crawler"
+    default_out: "./output/iotc"
+    description: "IOTC (Indian Ocean Tuna Commission) documents"
+
+  wto_site:
+    src_dir: "/path/to/virtual_negotiation_crawler/src/wto_fish_crawler"
+    default_out: "./output/wto_site"
+    description: "WTO fisheries subsidies agreement main site and subpages"
+
+  wto_docs:
+    src_dir: "/path/to/virtual_negotiation_crawler/src/wto_fish_crawler"
+    default_out: "./output/wto_docs"
+    description: "WTO Documents Online library (TN/RL, WT/MIN, WT/L series)"
+
+api:
+  host: "0.0.0.0"
+  port: 8000

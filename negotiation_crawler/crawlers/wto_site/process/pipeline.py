@@ -112,7 +112,7 @@ class Crawler:
             tier=urlrules.decide_tier(url_norm).value,
             depth=0, source=config.SOURCE, source_url=source,
             content_type=ext, lang="en" if urlrules.is_english(url_norm) else "und",
-            category=classify.classify(url_norm),
+            category=classify(url_norm),
             note="recorded at discovery; large/media, not downloaded",
             fetched_at=_now())
         self._write_manifest(rec)
@@ -164,7 +164,7 @@ class Crawler:
         # that shell for the document's content.
         if res.content_type == "html" and urlrules.expected_binary(url_norm):
             rec.content_type = url_norm.lower().split("?", 1)[0].rsplit(".", 1)[-1][:5]
-            rec.category = classify.classify(url_norm, rec.title)
+            rec.category = classify(url_norm, rec.title)
             rec.error = "access-gated: direct download blocked (HTML shell returned)"
             rec.note = ("media/binary not retrievable via direct GET; "
                         "needs browser/stream capture")
@@ -218,7 +218,7 @@ class Crawler:
                 log.info("dup-pdf: %s == %s", url_norm, canonical)
                 self._write_manifest(rec)
                 return
-            rec.category = classify.classify(url_norm, rec.title)
+            rec.category = classify(url_norm, rec.title)
             rec.note = "PDF downloaded; pending parse (teacher review first)"
             log.info("kept-pdf [%s] %s (downloaded, not parsed)", rec.category, url_norm)
             self._write_manifest(rec)
@@ -229,7 +229,7 @@ class Crawler:
             # and can be parsed later. NOT an error.
             ext = url_norm.lower().split("?", 1)[0].rsplit(".", 1)[-1][:5] or "bin"
             self._save_raw(res.body, rec.raw_sha256, "doc", ext=ext)
-            rec.category = classify.classify(url_norm, rec.title)
+            rec.category = classify(url_norm, rec.title)
             rec.note = f"binary document ({ext}); saved, not converted to markdown"
             log.info("kept-doc [%s] %s (%s)", rec.category, url_norm, ext)
             self._write_manifest(rec)
@@ -252,7 +252,7 @@ class Crawler:
             return
 
         # ---- classify + write ----
-        rec.category = classify.classify(url_norm, rec.title)
+        rec.category = classify(url_norm, rec.title)
         out_name = f"{rec.content_hash[:16]}.md"
         out_path = self.out / "markdown" / out_name
         out_path.write_text(_front_matter(rec) + markdown, encoding="utf-8")

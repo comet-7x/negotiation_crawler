@@ -25,12 +25,12 @@
 
 ## 1 项目概览
 
-| 数据源 | 内容 | 规模（估计） | 获取方式 |
-|--------|------|-------------|---------|
-| **wto\_site** | WTO 渔业补贴专题页面，含 HTML 转 Markdown、PDF | ~60 页面 | 有界广度优先爬取（纯 HTTP） |
-| **wto\_docs** | docs.wto.org 8 个文档系列 PDF（G/FS、TN/RL 等） | 数百~数千份 | 平铺 HTTP 枚举（无需浏览器） |
-| **fishery\_book** | FAO 知识仓库渔业出版物 PDF | 数百册 | DSpace 7 REST API |
-| **iotc** | IOTC 金枪鱼委员会全部文档类型 PDF | 数千份 | Drupal Facet API |
+| 数据源                  | 内容                                            | 规模（估计） | 获取方式                     |
+| ----------------------- | ----------------------------------------------- | ------------ | ---------------------------- |
+| **wto\_site**     | WTO 渔业补贴专题页面，含 HTML 转 Markdown、PDF  | ~60 页面     | 有界广度优先爬取（纯 HTTP）  |
+| **wto\_docs**     | docs.wto.org 8 个文档系列 PDF（G/FS、TN/RL 等） | 数百~数千份  | 平铺 HTTP 枚举（无需浏览器） |
+| **fishery\_book** | FAO 知识仓库渔业出版物 PDF                      | 数百册       | DSpace 7 REST API            |
+| **iotc**          | IOTC 金枪鱼委员会全部文档类型 PDF               | 数千份       | Drupal Facet API             |
 
 每个模块输出同样的四类产物：
 
@@ -144,19 +144,19 @@ negotiation_crawler/
 
 每个模块均由四层组成：
 
-| 层 | 目录 | 职责 |
-|----|------|------|
-| **classifier** | `classifier/` | 判断文档所属类别/系列 |
-| **fetch** | `fetch/` | HTTP 请求、页面解析、文件下载 |
-| **process** | `process/` | 数据清洗、格式转换、生成 xlsx |
-| **storage** | `storage/` | 持久化（SQLite / JSONL / 文件） |
+| 层                   | 目录            | 职责                            |
+| -------------------- | --------------- | ------------------------------- |
+| **classifier** | `classifier/` | 判断文档所属类别/系列           |
+| **fetch**      | `fetch/`      | HTTP 请求、页面解析、文件下载   |
+| **process**    | `process/`    | 数据清洗、格式转换、生成 xlsx   |
+| **storage**    | `storage/`    | 持久化（SQLite / JSONL / 文件） |
 
 ---
 
 ### 4.1 wto\_site — WTO 渔业网站页面
 
-**数据来源：** `www.wto.org` 渔业补贴专题页面  
-**爬取方式：** 异步 HTTP，广度优先；HTML → Trafilatura → Markdown；PDF 保留原文件  
+**数据来源：** `www.wto.org` 渔业补贴专题页面
+**爬取方式：** 异步 HTTP，广度优先；HTML → Trafilatura → Markdown；PDF 保留原文件
 **分类依据：** URL 规则 + 标题关键词 → 16 个类别
 
 #### 爬取流程
@@ -189,54 +189,54 @@ negotiation_crawler/
 
 #### index.xlsx 说明
 
-| Sheet | 内容 |
-|-------|------|
-| **全部** | 所有已爬取页面（跳过重复项和失败项） |
-| **概览 / 导论 / 法律文本 / …** | 按类别分 Sheet（最多 16 个） |
+| Sheet                                 | 内容                                 |
+| ------------------------------------- | ------------------------------------ |
+| **全部**                        | 所有已爬取页面（跳过重复项和失败项） |
+| **概览 / 导论 / 法律文本 / …** | 按类别分 Sheet（最多 16 个）         |
 
 **列说明（全部 Sheet）：**
 
-| 列 | 说明 |
-|----|------|
-| 序号 | 行号 |
-| 类别 | 中文类别名 |
-| 标题 | 页面标题或文件名 |
-| 类型 | HTML / PDF / 视频 |
-| 状态 | 已转Markdown / 已下载PDF / 受限（需浏览器） |
-| 本地路径 | 相对于 output\_dir 的路径 |
-| 来源URL | 原始页面地址 |
+| 列       | 说明                                        |
+| -------- | ------------------------------------------- |
+| 序号     | 行号                                        |
+| 类别     | 中文类别名                                  |
+| 标题     | 页面标题或文件名                            |
+| 类型     | HTML / PDF / 视频                           |
+| 状态     | 已转Markdown / 已下载PDF / 受限（需浏览器） |
+| 本地路径 | 相对于 output\_dir 的路径                   |
+| 来源URL  | 原始页面地址                                |
 
 **页面类别对照：**
 
-| 类别代码 | 中文标签 | 典型内容 |
-|---------|---------|---------|
-| overview | 概览 | 专题门户首页 |
-| legal\_text | 法律文本 | 协定正式条文 |
-| ratification | 接受与批准 | 成员批准状态 |
-| implementation | 履约 | 成员履约报告 |
-| publication | 出版物 | 宣传册、情况说明 |
-| negotiation\_submission | 谈判 | TN/RL 系列文件 |
-| committee | 委员会 | G/FS 系列、委员会文件 |
-| mandate\_decision | 部长决定与议定书 | WT/MIN、WT/L 系列 |
-| fish\_fund | 渔业基金 | WTO 技援基金页面 |
-| international\_instrument | 国际文书 | UNCLOS、CCRF 等 |
-| multimedia | 音视频 | .mp4 视频（仅记录 URL） |
-| news | 新闻 | /news\_e/ 路径下的新闻 |
-| ministerial | 部长会简报 | /minist\_e/ 路径 |
-| case\_story | 案例故事 | 成员案例页面 |
-| uncategorized | 未分类 | 未匹配任何规则 |
+| 类别代码                  | 中文标签         | 典型内容                |
+| ------------------------- | ---------------- | ----------------------- |
+| overview                  | 概览             | 专题门户首页            |
+| legal\_text               | 法律文本         | 协定正式条文            |
+| ratification              | 接受与批准       | 成员批准状态            |
+| implementation            | 履约             | 成员履约报告            |
+| publication               | 出版物           | 宣传册、情况说明        |
+| negotiation\_submission   | 谈判             | TN/RL 系列文件          |
+| committee                 | 委员会           | G/FS 系列、委员会文件   |
+| mandate\_decision         | 部长决定与议定书 | WT/MIN、WT/L 系列       |
+| fish\_fund                | 渔业基金         | WTO 技援基金页面        |
+| international\_instrument | 国际文书         | UNCLOS、CCRF 等         |
+| multimedia                | 音视频           | .mp4 视频（仅记录 URL） |
+| news                      | 新闻             | /news\_e/ 路径下的新闻  |
+| ministerial               | 部长会简报       | /minist\_e/ 路径        |
+| case\_story               | 案例故事         | 成员案例页面            |
+| uncategorized             | 未分类           | 未匹配任何规则          |
 
 #### 常用 --set 参数
 
-| 参数 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
-| `max_depth` | int | 4 | 最大爬取深度 |
-| `concurrency` | int | 4 | 并发请求数 |
-| `delay` | float | 1.0 | 请求间隔（秒） |
-| `resume` | bool | false | 从已爬取记录续跑 |
-| `include_docs` | bool | false | 是否下载外链 Office 文档 |
-| `max_pages` | int | 无限制 | 最多爬取页面数 |
-| `pdf_backend` | str | pymupdf | PDF 转 Markdown 引擎 |
+| 参数             | 类型  | 默认值  | 说明                     |
+| ---------------- | ----- | ------- | ------------------------ |
+| `max_depth`    | int   | 4       | 最大爬取深度             |
+| `concurrency`  | int   | 4       | 并发请求数               |
+| `delay`        | float | 1.0     | 请求间隔（秒）           |
+| `resume`       | bool  | false   | 从已爬取记录续跑         |
+| `include_docs` | bool  | false   | 是否下载外链 Office 文档 |
+| `max_pages`    | int   | 无限制  | 最多爬取页面数           |
+| `pdf_backend`  | str   | pymupdf | PDF 转 Markdown 引擎     |
 
 #### 运行示例
 
@@ -257,22 +257,22 @@ python -m negotiation_crawler run wto_site --out ~/out/wto_site \
 
 ### 4.2 wto\_docs — WTO 文档库 PDF
 
-**数据来源：** `docs.wto.org` 8 个渔业相关文档系列  
-**爬取方式：** 纯 HTTP，通过 `FE_S_S006.aspx` ASP.NET 分页枚举（无需浏览器）  
+**数据来源：** `docs.wto.org` 8 个渔业相关文档系列
+**爬取方式：** 纯 HTTP，通过 `FE_S_S006.aspx` ASP.NET 分页枚举（无需浏览器）
 **分类依据：** 文档系列（G/FS、TN/RL 等），自动打标
 
 #### 8 个文档系列
 
-| 标签 | 系列名称 | 内容说明 |
-|------|---------|---------|
-| GFS | G/FS — 渔业补贴委员会 | 委员会通报、履约文件（2022年起） |
-| TN | TN/RL — 谈判 | 规则谈判组提案（2001年至今，数量最大） |
-| WTMIN | WT/MIN — 部长会 | 部长会决定与宣言 |
-| WTL | WT/L — 法律文本 | 协定、议定书正式文本 |
-| WTLET | WT/LET — 接受书 | 成员接受文书 |
-| GSCM | G/SCM — 补贴通报 | 补贴委员会通报 |
-| WTGC | WT/GC — 总理事会 | 总理事会文件 |
-| JOBRL | JOB/RL — 室文件 | 内部谈判工作文件 |
+| 标签  | 系列名称               | 内容说明                               |
+| ----- | ---------------------- | -------------------------------------- |
+| GFS   | G/FS — 渔业补贴委员会 | 委员会通报、履约文件（2022年起）       |
+| TN    | TN/RL — 谈判          | 规则谈判组提案（2001年至今，数量最大） |
+| WTMIN | WT/MIN — 部长会       | 部长会决定与宣言                       |
+| WTL   | WT/L — 法律文本       | 协定、议定书正式文本                   |
+| WTLET | WT/LET — 接受书       | 成员接受文书                           |
+| GSCM  | G/SCM — 补贴通报      | 补贴委员会通报                         |
+| WTGC  | WT/GC — 总理事会      | 总理事会文件                           |
+| JOBRL | JOB/RL — 室文件       | 内部谈判工作文件                       |
 
 #### 爬取流程（三阶段）
 
@@ -317,30 +317,30 @@ Phase 3：合并清单
 
 #### index.xlsx 说明
 
-| Sheet | 内容 |
-|-------|------|
-| **全部** | 8 个系列合并，按系列→日期排序 |
-| **G-FS — 渔业补贴委员会** | 仅 G/FS 系列 |
-| **TN-RL — 谈判** | 仅 TN/RL 系列 |
-| **WT-MIN — 部长会** | 仅 WT/MIN 系列 |
-| **（其余系列各一 Sheet）** | … |
+| Sheet                            | 内容                           |
+| -------------------------------- | ------------------------------ |
+| **全部**                   | 8 个系列合并，按系列→日期排序 |
+| **G-FS — 渔业补贴委员会** | 仅 G/FS 系列                   |
+| **TN-RL — 谈判**          | 仅 TN/RL 系列                  |
+| **WT-MIN — 部长会**       | 仅 WT/MIN 系列                 |
+| **（其余系列各一 Sheet）** | …                             |
 
 **列说明：**
 
-| 列 | 说明 | 备注 |
-|----|------|------|
-| 序号 | 行号 | |
-| 系列 | 中文系列名 | |
-| 文档号 | WTO 文档编号（如 G/FS/1） | |
-| 标题 | 文档标题 | |
-| 年份 | 发布年份（整数） | 从日期提取 |
-| 日期 | 发布日期（YYYY-MM-DD） | |
-| 大小(KB) | 文件大小 | |
-| 页数 | PDF 页数 | |
-| 访问权限 | 公开 / 受限 | 受限文件不可下载 |
-| 已下载 | 是 / 否 | |
-| 下载链接 | directdoc 直链 URL | 公开文件可直接点开 |
-| 本地路径 | 已下载 PDF 的本地路径 | 未下载则为空 |
+| 列       | 说明                      | 备注               |
+| -------- | ------------------------- | ------------------ |
+| 序号     | 行号                      |                    |
+| 系列     | 中文系列名                |                    |
+| 文档号   | WTO 文档编号（如 G/FS/1） |                    |
+| 标题     | 文档标题                  |                    |
+| 年份     | 发布年份（整数）          | 从日期提取         |
+| 日期     | 发布日期（YYYY-MM-DD）    |                    |
+| 大小(KB) | 文件大小                  |                    |
+| 页数     | PDF 页数                  |                    |
+| 访问权限 | 公开 / 受限               | 受限文件不可下载   |
+| 已下载   | 是 / 否                   |                    |
+| 下载链接 | directdoc 直链 URL        | 公开文件可直接点开 |
+| 本地路径 | 已下载 PDF 的本地路径     | 未下载则为空       |
 
 **SQLite 数据库（index.sqlite）：**
 
@@ -361,15 +361,15 @@ GROUP BY body;
 
 #### 常用 --set 参数
 
-| 参数 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
-| `skip_detail` | bool | false | 跳过 Phase 1（复用已有 JSONL） |
-| `skip_download` | bool | false | 跳过 Phase 2 下载 |
-| `only_series` | str | 全部 | 只运行指定系列，如 `GFS`、`TN` |
-| `delay` | float | 0.8 | 请求间隔（秒） |
-| `resume` | bool | true | 已有 JSONL 则跳过重新枚举 |
-| `fisheries_only` | bool | false | 仅下载标题含渔业关键词的文件 |
-| `skip_harvest` | bool | true | 跳过 Playwright 阶段（推荐保持 true） |
+| 参数               | 类型  | 默认值 | 说明                                  |
+| ------------------ | ----- | ------ | ------------------------------------- |
+| `skip_detail`    | bool  | false  | 跳过 Phase 1（复用已有 JSONL）        |
+| `skip_download`  | bool  | false  | 跳过 Phase 2 下载                     |
+| `only_series`    | str   | 全部   | 只运行指定系列，如`GFS`、`TN`     |
+| `delay`          | float | 0.8    | 请求间隔（秒）                        |
+| `resume`         | bool  | true   | 已有 JSONL 则跳过重新枚举             |
+| `fisheries_only` | bool  | false  | 仅下载标题含渔业关键词的文件          |
+| `skip_harvest`   | bool  | true   | 跳过 Playwright 阶段（推荐保持 true） |
 
 #### 运行示例
 
@@ -394,8 +394,8 @@ python -m negotiation_crawler run wto_docs --out ~/out/wto_docs \
 
 ### 4.3 fishery\_book — FAO 渔业出版物
 
-**数据来源：** FAO 知识仓库（`www.fao.org/library`，DSpace 7）  
-**爬取方式：** DSpace 7 REST API，按 Collection 分批拉取  
+**数据来源：** FAO 知识仓库（`www.fao.org/library`，DSpace 7）
+**爬取方式：** DSpace 7 REST API，按 Collection 分批拉取
 **分类依据：** 标题关键词模糊匹配（rapidfuzz）
 
 #### 爬取流程
@@ -421,51 +421,51 @@ seeds.json（Collection URL 列表）
 
 #### index.xlsx 说明
 
-| Sheet | 内容 |
-|-------|------|
-| **Audit** | 所有记录，按状态颜色标注 |
-| **Summary** | 按状态统计数量 |
+| Sheet             | 内容                     |
+| ----------------- | ------------------------ |
+| **Audit**   | 所有记录，按状态颜色标注 |
+| **Summary** | 按状态统计数量           |
 
 **Audit Sheet 列说明：**
 
-| 列 | 说明 |
-|----|------|
-| 类别 | 出版物分类 |
-| 年份 | 出版年份 |
-| 文件名 | 下载后的本地文件名 |
-| 标题 | 出版物标题 |
-| 下载链接 | FAO 仓库直链（可点击） |
-| 页数 | PDF 页数 |
-| 大小(KB) | 文件大小 |
-| 格式 | PDF / DOCX 等 |
-| **状态** | 见下表 |
-| 匹配分 | 关键词匹配分（0–100） |
-| Handle | FAO 永久标识符 |
-| 来源 | api / legacy |
-| 种子ID | 对应 seeds.json 条目 |
-| 备注 | 异常信息 |
+| 列             | 说明                   |
+| -------------- | ---------------------- |
+| 类别           | 出版物分类             |
+| 年份           | 出版年份               |
+| 文件名         | 下载后的本地文件名     |
+| 标题           | 出版物标题             |
+| 下载链接       | FAO 仓库直链（可点击） |
+| 页数           | PDF 页数               |
+| 大小(KB)       | 文件大小               |
+| 格式           | PDF / DOCX 等          |
+| **状态** | 见下表                 |
+| 匹配分         | 关键词匹配分（0–100） |
+| Handle         | FAO 永久标识符         |
+| 来源           | api / legacy           |
+| 种子ID         | 对应 seeds.json 条目   |
+| 备注           | 异常信息               |
 
 **状态颜色说明：**
 
-| 颜色 | 状态 | 含义 |
-|------|------|------|
-| 绿色 | FOUND | 正常下载 |
-| 蓝色 | LEGACY | 旧 API 兼容获取 |
+| 颜色 | 状态      | 含义                     |
+| ---- | --------- | ------------------------ |
+| 绿色 | FOUND     | 正常下载                 |
+| 蓝色 | LEGACY    | 旧 API 兼容获取          |
 | 黄色 | AMBIGUOUS | 匹配有歧义，建议人工确认 |
-| 橙色 | NO\_PDF | 无 PDF，仅有元数据 |
-| 红色 | MISSING | 未找到匹配项 |
-| 深红 | ERROR | 下载失败 |
+| 橙色 | NO\_PDF   | 无 PDF，仅有元数据       |
+| 红色 | MISSING   | 未找到匹配项             |
+| 深红 | ERROR     | 下载失败                 |
 
 #### 常用 --set 参数
 
-| 参数 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
-| `no_download` | bool | false | 只枚举，不下载 PDF |
-| `no_resume` | bool | false | 强制重新爬取（忽略已有记录） |
-| `category` | str | 全部 | 按类别过滤 |
-| `limit` | int | 无限制 | 限制处理数量（测试用） |
-| `concurrency` | int | 4 | 并发下载数 |
-| `proxy` | str | 无 | HTTP 代理，如 `http://proxy:8080` |
+| 参数            | 类型 | 默认值 | 说明                               |
+| --------------- | ---- | ------ | ---------------------------------- |
+| `no_download` | bool | false  | 只枚举，不下载 PDF                 |
+| `no_resume`   | bool | false  | 强制重新爬取（忽略已有记录）       |
+| `category`    | str  | 全部   | 按类别过滤                         |
+| `limit`       | int  | 无限制 | 限制处理数量（测试用）             |
+| `concurrency` | int  | 4      | 并发下载数                         |
+| `proxy`       | str  | 无     | HTTP 代理，如`http://proxy:8080` |
 
 #### 运行示例
 
@@ -486,8 +486,8 @@ python -m negotiation_crawler run fishery_book --out ~/out/fishery_books \
 
 ### 4.4 iotc — IOTC 金枪鱼委员会文件
 
-**数据来源：** IOTC 官网（`www.iotc.org`），Drupal Facet API  
-**爬取方式：** 先枚举全部 31 种文档类型的元数据，再下载英文 PDF  
+**数据来源：** IOTC 官网（`www.iotc.org`），Drupal Facet API
+**爬取方式：** 先枚举全部 31 种文档类型的元数据，再下载英文 PDF
 **分类依据：** 31 种文档类型 → 若干类别组（category\_group）
 
 #### 爬取流程（四阶段）
@@ -511,45 +511,45 @@ Phase 4: build_xlsx      — 从 SQLite 生成 index.xlsx
 
 #### index.xlsx 说明
 
-| Sheet | 内容 |
-|-------|------|
-| **全部** | 所有英文文档 |
-| **会议报告类** | Session Reports 等 |
-| **合规报告类** | Compliance Reports 等 |
+| Sheet                              | 内容                        |
+| ---------------------------------- | --------------------------- |
+| **全部**                     | 所有英文文档                |
+| **会议报告类**               | Session Reports 等          |
+| **合规报告类**               | Compliance Reports 等       |
 | **（其余类别组各一 Sheet）** | 按 category\_group 自动划分 |
 
 **列说明：**
 
-| 列 | 说明 |
-|----|------|
-| 类别 | 中文文档类型名 |
-| 文档类型组 | 所属类别组 |
-| 年份 | 文档年份 |
-| 文件名 | PDF 文件名 |
-| 标题 | 文档标题 |
-| Reference | IOTC 文档编号 |
-| 会议 | 所属会议名称 |
-| 届次 | 会议届次 |
-| 下载链接 | 直链 URL（可点击） |
-| 页数 | PDF 页数 |
-| 大小(KB) | 文件大小 |
-| 格式 | PDF / DOCX 等 |
-| 国家 | 提交国家（如有） |
-| 发布日期 | circulated 日期 |
-| 作者 | 作者信息 |
-| 状态 | downloaded / pending / failed |
+| 列         | 说明                          |
+| ---------- | ----------------------------- |
+| 类别       | 中文文档类型名                |
+| 文档类型组 | 所属类别组                    |
+| 年份       | 文档年份                      |
+| 文件名     | PDF 文件名                    |
+| 标题       | 文档标题                      |
+| Reference  | IOTC 文档编号                 |
+| 会议       | 所属会议名称                  |
+| 届次       | 会议届次                      |
+| 下载链接   | 直链 URL（可点击）            |
+| 页数       | PDF 页数                      |
+| 大小(KB)   | 文件大小                      |
+| 格式       | PDF / DOCX 等                 |
+| 国家       | 提交国家（如有）              |
+| 发布日期   | circulated 日期               |
+| 作者       | 作者信息                      |
+| 状态       | downloaded / pending / failed |
 
 #### 常用 --set 参数
 
-| 参数 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
-| `skip_manifest` | bool | false | 跳过 Phase 1（复用已有 SQLite） |
-| `enrich` | bool | true | 是否执行 Phase 2 详情获取 |
-| `list_only` | bool | false | 仅列举，不下载 |
-| `build_xlsx` | bool | true | 是否生成 xlsx |
-| `all_langs` | bool | false | 下载所有语言（默认仅英文） |
-| `limit` | int | 无限制 | 限制处理文档数 |
-| `only` | str | 全部 | 按文档类型代码过滤，如 `SC` |
+| 参数              | 类型 | 默认值 | 说明                            |
+| ----------------- | ---- | ------ | ------------------------------- |
+| `skip_manifest` | bool | false  | 跳过 Phase 1（复用已有 SQLite） |
+| `enrich`        | bool | true   | 是否执行 Phase 2 详情获取       |
+| `list_only`     | bool | false  | 仅列举，不下载                  |
+| `build_xlsx`    | bool | true   | 是否生成 xlsx                   |
+| `all_langs`     | bool | false  | 下载所有语言（默认仅英文）      |
+| `limit`         | int  | 无限制 | 限制处理文档数                  |
+| `only`          | str  | 全部   | 按文档类型代码过滤，如`SC`    |
 
 #### 运行示例
 
@@ -618,16 +618,17 @@ python -m negotiation_crawler run all --out ~/output
 
 ### 5.3 各模块交付物汇总
 
-| 模块 | Excel 文件 | Sheet 结构 | PDF 位置 | 中间数据库 |
-|------|-----------|-----------|---------|----------|
-| wto\_site | `index.xlsx` | 全部 + 16个类别 | `raw/pdf/`（SHA256命名） | `manifest.jsonl` |
-| wto\_docs | `index.xlsx` + `index.csv` + `index.sqlite` | 全部 + 8个系列 | `library/{系列}/` | `docs_manifest/*.jsonl` |
-| fishery\_book | `index.xlsx` | Audit + Summary | `pdfs/` | `manifest.sqlite` |
-| iotc | `index.xlsx` | 全部 + 按类型组 | `pdfs/` | `manifest.sqlite` |
+| 模块          | Excel 文件                                        | Sheet 结构      | PDF 位置                   | 中间数据库                |
+| ------------- | ------------------------------------------------- | --------------- | -------------------------- | ------------------------- |
+| wto\_site     | `index.xlsx`                                    | 全部 + 16个类别 | `raw/pdf/`（SHA256命名） | `manifest.jsonl`        |
+| wto\_docs     | `index.xlsx` + `index.csv` + `index.sqlite` | 全部 + 8个系列  | `library/{系列}/`        | `docs_manifest/*.jsonl` |
+| fishery\_book | `index.xlsx`                                    | Audit + Summary | `pdfs/`                  | `manifest.sqlite`       |
+| iotc          | `index.xlsx`                                    | 全部 + 按类型组 | `pdfs/`                  | `manifest.sqlite`       |
 
 ### 5.4 全局去重
 
 运行 `all` 后自动扫描所有下载文件，按 SHA-256 内容哈希去重：
+
 - 保留字母顺序最靠前的路径为"正本"
 - 删除其余副本
 - 报告写入 `~/output/dedup_report.json`
@@ -684,12 +685,12 @@ python -m negotiation_crawler run <模块名|all> [选项]
 
 **--set 值类型自动推断：**
 
-| 写法 | 推断为 |
-|------|--------|
-| `key=true` 或 `key=false` | bool |
-| `key=42` | int |
-| `key=1.5` | float |
-| `key=GFS` 等字符串 | str |
+| 写法                          | 推断为 |
+| ----------------------------- | ------ |
+| `key=true` 或 `key=false` | bool   |
+| `key=42`                    | int    |
+| `key=1.5`                   | float  |
+| `key=GFS` 等字符串          | str    |
 
 **示例：**
 
@@ -752,17 +753,17 @@ python -m negotiation_crawler serve
 
 ### 7.1 接口列表
 
-| 方法 | 路径 | 说明 |
-|------|------|------|
-| GET | `/health` | 健康检查，返回 `{"status":"ok"}` |
-| GET | `/crawlers` | 列出所有模块名称和描述 |
-| POST | `/run/{crawler_name}` | 异步启动爬虫任务 |
-| GET | `/tasks/{task_id}` | 查询任务状态与日志 |
-| GET | `/tasks` | 列出所有任务（当前进程内） |
+| 方法 | 路径                    | 说明                              |
+| ---- | ----------------------- | --------------------------------- |
+| GET  | `/health`             | 健康检查，返回`{"status":"ok"}` |
+| GET  | `/crawlers`           | 列出所有模块名称和描述            |
+| POST | `/run/{crawler_name}` | 异步启动爬虫任务                  |
+| GET  | `/tasks/{task_id}`    | 查询任务状态与日志                |
+| GET  | `/tasks`              | 列出所有任务（当前进程内）        |
 
 交互式文档：`http://localhost:8000/docs`
 
-### 7.2 POST /run/{crawler\_name} — 启动任务
+### 7.2 POST /run/ — 启动任务
 
 `crawler_name` 可以是 `fishery_book / iotc / wto_site / wto_docs / all`。
 
@@ -791,7 +792,7 @@ python -m negotiation_crawler serve
 }
 ```
 
-### 7.3 GET /tasks/{task\_id} — 查询状态
+### 7.3 GET /tasks/ — 查询状态
 
 ```json
 {
@@ -888,8 +889,9 @@ public class CrawlerRunner {
 
 ### 8.2 方式二：HTTP API 调用（推荐用于生产）
 
-**步骤：**  
-1. 服务器上运行 `python -m negotiation_crawler serve --port 8000`  
+**步骤：**
+
+1. 服务器上运行 `python -m negotiation_crawler serve --port 8000`
 2. Java 侧发 HTTP 请求，提交任务 → 轮询状态 → 读取结果
 
 ```java
@@ -1049,23 +1051,23 @@ api:
 
 ## 10 常见问题
 
-**Q: 推荐从哪个模块开始？**  
+**Q: 推荐从哪个模块开始？**
 A: 从 `wto_docs` 开始，原因：纯 HTTP、无需浏览器、输出结构清晰、可以只跑单个系列（`--set only_series=GFS`）快速验证环境。
 
-**Q: wto\_docs 全量运行需要多久？**  
+**Q: wto\_docs 全量运行需要多久？**
 A: 约 2–4 小时（8 个系列合计数千页，每页间隔 0.8 秒）。建议先用 `--set only_series=GFS` 测试单系列（约 10–15 分钟）。
 
-**Q: 磁盘空间不够怎么办？**  
+**Q: 磁盘空间不够怎么办？**
 A: 用 `--out` 指定空间充足的目录（建议 SSD，预留 ≥ 50 GB）。也可先用 `--set fisheries_only=true` 只下载含渔业关键词的文件。
 
 **Q: 已经下载过一次，如何只补充新文件不重爬？**
 
-| 模块 | 命令 |
-|------|------|
-| wto\_docs | 默认 `resume=true`，直接重跑即可（已有 JSONL 跳过枚举，已下载 PDF 跳过下载） |
-| iotc | `--set skip_manifest=true`（复用已有 SQLite，只补充下载） |
-| fishery\_book | 默认断点续传，加 `--set no_resume=true` 可强制重跑 |
-| wto\_site | `--set resume=true` |
+| 模块          | 命令                                                                          |
+| ------------- | ----------------------------------------------------------------------------- |
+| wto\_docs     | 默认`resume=true`，直接重跑即可（已有 JSONL 跳过枚举，已下载 PDF 跳过下载） |
+| iotc          | `--set skip_manifest=true`（复用已有 SQLite，只补充下载）                   |
+| fishery\_book | 默认断点续传，加`--set no_resume=true` 可强制重跑                           |
+| wto\_site     | `--set resume=true`                                                         |
 
 **Q: 如何只重新生成 xlsx，不重新爬取？**
 
@@ -1079,7 +1081,7 @@ python -m negotiation_crawler run iotc --out ~/out/iotc \
   --set skip_manifest=true --set enrich=false
 ```
 
-**Q: Java 调用时找不到 python 命令？**  
+**Q: Java 调用时找不到 python 命令？**
 A: 在 ProcessBuilder 中写虚拟环境的完整路径：
 
 ```java
@@ -1089,8 +1091,8 @@ String python = "/home/user/negotiation_crawler/.venv/bin/python";
 String python = "C:\\Users\\user\\negotiation_crawler\\.venv\\Scripts\\python.exe";
 ```
 
-**Q: API 任务失败了，如何查看错误？**  
+**Q: API 任务失败了，如何查看错误？**
 A: `GET /tasks/{task_id}` 响应中的 `error` 和 `log` 字段包含完整错误信息。
 
-**Q: 如何同时运行多个模块（不用 run all）？**  
+**Q: 如何同时运行多个模块（不用 run all）？**
 A: 启动 API 服务，分别提交 `POST /run/iotc` 和 `POST /run/fishery_book`，两个任务在后台并行执行，各自用 `task_id` 独立轮询。

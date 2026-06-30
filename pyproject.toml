@@ -8,21 +8,20 @@ dependencies = [
     "uvicorn[standard]>=0.30",
     "pyyaml>=6.0",
     # fishery_book
-    "httpx[http2]>=0.27",
+    "httpx[http2,socks]>=0.27",
     "loguru>=0.7",
     "rapidfuzz>=3.9",
     "openpyxl>=3.1",
     # iotc
     "selectolax>=0.3",
     # wto_site
-    "trafilatura>=1.12",
+    "beautifulsoup4>=4.12",
+    "markdownify>=0.13",
 ]
 
 [project.optional-dependencies]
 pdf = [
     "pypdf>=4.2",          # fishery_book: page count from PDF
-    "pymupdf>=1.24",       # wto_site: PDF→Markdown fallback
-    "pymupdf4llm>=0.0.17",
 ]
 wto-docs-harvest = [
     "playwright>=1.44",    # wto_docs phase 1: browser-driven search

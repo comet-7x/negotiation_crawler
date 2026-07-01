@@ -13,3 +13,4 @@ output/
 .env
 
 poc/
+config.yaml

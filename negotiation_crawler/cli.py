@@ -4,9 +4,12 @@ Usage:
     python -m negotiation_crawler list
     python -m negotiation_crawler run fishery_book --out /data/out
     python -m negotiation_crawler run iotc --out /data/out --set enrich=true
+    python -m negotiation_crawler run iotc --out /data/out --set pdf_dir=/mnt/nas/pdfs
     python -m negotiation_crawler run wto_site --out /data/out --set max_depth=4
     python -m negotiation_crawler run wto_docs --out /data/out --set skip_harvest=true
     python -m negotiation_crawler run all --out /data/out
+    python -m negotiation_crawler xlsx iotc --out /data/out
+    python -m negotiation_crawler xlsx iotc --db /data/out/manifest.sqlite --xlsx /data/out/index.xlsx
     python -m negotiation_crawler dedup /data/out --dry-run
     python -m negotiation_crawler serve --port 8000
 """
@@ -103,6 +106,125 @@ def _cmd_run(args: argparse.Namespace) -> int:
         return 0 if ok else 1
 
 
+def _cmd_xlsx(args: argparse.Namespace) -> int:
+    """Rebuild an index.xlsx from an existing manifest without re-crawling."""
+    module = args.module
+
+    if module == "iotc":
+        from pathlib import Path
+        from .crawlers.iotc.process.xlsx_builder import build_xlsx
+
+        if args.db:
+            db_path = Path(args.db).resolve()
+        elif args.out:
+            db_path = Path(args.out).resolve() / "manifest.sqlite"
+        else:
+            print("ERROR: provide --out or --db", file=sys.stderr)
+            return 2
+
+        if args.xlsx:
+            xlsx_path = Path(args.xlsx).resolve()
+        elif args.out:
+            xlsx_path = Path(args.out).resolve() / "index.xlsx"
+        else:
+            xlsx_path = db_path.parent / "index.xlsx"
+
+        if not db_path.exists():
+            print(f"ERROR: manifest not found: {db_path}", file=sys.stderr)
+            return 1
+
+        print(f"[xlsx] reading  {db_path}")
+        print(f"[xlsx] writing  {xlsx_path}")
+        build_xlsx(db_path, xlsx_path)
+        print(f"[xlsx] done → {xlsx_path}")
+        return 0
+
+    elif module == "wto_docs":
+        from pathlib import Path
+        from .crawlers.wto_docs.process import build_index
+
+        out = Path(args.out).resolve() if args.out else None
+        if not out:
+            print("ERROR: --out required for wto_docs xlsx", file=sys.stderr)
+            return 2
+        manifest_dir = out / "docs_manifest"
+        library_dir  = out / "library"
+        if not manifest_dir.exists():
+            print(f"ERROR: docs_manifest not found under {out}", file=sys.stderr)
+            return 1
+        idx = build_index(manifest_dir=manifest_dir, library_dir=library_dir, out_dir=out)
+        print(f"[xlsx] done → {out}/index.xlsx  ({idx['total']} rows)")
+        return 0
+
+    elif module == "wto_site":
+        from pathlib import Path
+        from .crawlers.wto_site.process import build_xlsx
+
+        out = Path(args.out).resolve() if args.out else None
+        if not out:
+            print("ERROR: --out required for wto_site xlsx", file=sys.stderr)
+            return 2
+        xlsx = build_xlsx(out)
+        if xlsx:
+            print(f"[xlsx] done → {xlsx}")
+        else:
+            print("[xlsx] no manifest.jsonl found — nothing to build", file=sys.stderr)
+            return 1
+        return 0
+
+    elif module == "fishery_book":
+        from pathlib import Path
+        from .crawlers.fishery_book.process import build_xlsx
+
+        out = Path(args.out).resolve() if args.out else None
+        if not out:
+            print("ERROR: --out required for fishery_book xlsx", file=sys.stderr)
+            return 2
+        db_path   = Path(args.db).resolve() if args.db else out / "manifest.sqlite"
+        xlsx_path = Path(args.xlsx).resolve() if args.xlsx else out / "index.xlsx"
+        if not db_path.exists():
+            print(f"ERROR: manifest not found: {db_path}", file=sys.stderr)
+            return 1
+        print(f"[xlsx] reading  {db_path}")
+        build_xlsx(db_path, xlsx_path)
+        print(f"[xlsx] done → {xlsx_path}")
+        return 0
+
+    else:
+        print(f"ERROR: xlsx not supported for module '{module}'", file=sys.stderr)
+        return 2
+
+
+def _cmd_export(args: argparse.Namespace) -> int:
+    from pathlib import Path
+    from .export.unified_db import MYSQL_DDL, import_all
+
+    if args.ddl:
+        print(MYSQL_DDL)
+        return 0
+
+    if not args.base:
+        print("ERROR: --base <output_dir> is required", file=sys.stderr)
+        return 2
+
+    base    = Path(args.base).resolve()
+    db_path = Path(args.db).resolve() if args.db else base / "unified.sqlite"
+    modules = args.module or None   # None → all
+
+    print(f"[export] base    : {base}")
+    print(f"[export] dest db : {db_path}")
+    print(f"[export] modules : {modules or 'all'}")
+
+    results = import_all(base, db_path, modules=modules)
+    total   = 0
+    for mod, n in results.items():
+        status = f"{n} rows" if n else "skipped (no xlsx found)"
+        print(f"  [{mod}] {status}")
+        total += n
+    print(f"[export] done → {total} total rows in {db_path}")
+    return 0
+
+
 def _cmd_dedup(args: argparse.Namespace) -> int:
     from .dedup import deduplicate
     stats = deduplicate(Path(args.directory), dry_run=args.dry_run)
@@ -142,6 +264,31 @@ def build_parser() -> argparse.ArgumentParser:
                    help="(only with 'all') report duplicates but do not delete")
     r.add_argument("-v", "--verbose", action="store_true")
 
+    x = sub.add_parser("xlsx", help="rebuild index.xlsx from an existing manifest (no re-crawl)")
+    x.add_argument(
+        "module",
+        choices=["iotc", "wto_docs", "wto_site", "fishery_book"],
+        help="which module's xlsx to rebuild",
+    )
+    x.add_argument("--out", default=None,
+                   help="output directory containing the manifest "
+                        "(db and xlsx default to {out}/manifest.sqlite and {out}/index.xlsx)")
+    x.add_argument("--db", default=None,
+                   help="explicit path to manifest.sqlite (overrides --out for db location)")
+    x.add_argument("--xlsx", default=None,
+                   help="explicit output path for index.xlsx (overrides --out for xlsx location)")
+
+    e = sub.add_parser("export", help="import all xlsx into a unified SQLite/MySQL document table")
+    e.add_argument("--base", default=None,
+                   help="base output directory (contains iotc/, wto_docs/, wto_site/, fishery_book/)")
+    e.add_argument("--db", default=None,
+                   help="destination SQLite path (default: {base}/unified.sqlite)")
+    e.add_argument("--module", action="append", metavar="MODULE",
+                   choices=["iotc", "wto_docs", "wto_site", "fishery_book"],
+                   help="import only specific modules (repeatable; default: all)")
+    e.add_argument("--ddl", action="store_true",
+                   help="print MySQL DDL and exit (for creating table in MySQL)")
+
     d = sub.add_parser("dedup", help="deduplicate already-downloaded files by SHA-256")
     d.add_argument("directory", help="root output directory to scan")
     d.add_argument("--dry-run", action="store_true",
@@ -162,6 +309,10 @@ def main(argv: list[str] | None = None) -> int:
         return _cmd_list(args)
     elif args.cmd == "run":
         return _cmd_run(args)
+    elif args.cmd == "xlsx":
+        return _cmd_xlsx(args)
+    elif args.cmd == "export":
+        return _cmd_export(args)
     elif args.cmd == "dedup":
         return _cmd_dedup(args)
     elif args.cmd == "serve":

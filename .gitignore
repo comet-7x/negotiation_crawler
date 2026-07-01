@@ -11,3 +11,5 @@ output/
 *.xlsx
 *.log
 .env
+
+poc/

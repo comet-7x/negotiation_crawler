@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-import asyncio
 import logging
+import sys
 from pathlib import Path
 
 from ...base import BaseCrawler, CrawlResult
@@ -12,56 +12,62 @@ from ...config import get_config
 log = logging.getLogger("wto_site")
 
 
+def _setup_logging(out: Path) -> None:
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(message)s",
+        handlers=[
+            logging.FileHandler(out / "crawl.log", encoding="utf-8"),
+            logging.StreamHandler(sys.stdout),
+        ],
+    )
+
+
 class WtoSiteCrawler(BaseCrawler):
     name = "wto_site"
-    description = "WTO fisheries subsidies agreement main site and subpages → Markdown corpus"
+    description = "WTO fisheries subsidies agreement main site → Markdown corpus (English only)"
 
     def run(
         self,
         output_dir: str | None = None,
         *,
-        max_depth: int = 4,
-        concurrency: int = 4,
         delay: float = 1.0,
-        include_docs: bool = False,
         max_pages: int | None = None,
-        pdf_backend: str = "pymupdf",
         resume: bool = False,
-        seeds: list[str] | None = None,
+        respect_robots: bool = True,
+        max_hops_outside: int = 1,
         **_extra,
     ) -> CrawlResult:
-        from . import config
-        from .process.pipeline import Crawler, load_visited
+        from .config import Config
+        from .process.pipeline import Crawler
+        from .process import build_xlsx
 
-        cfg = get_config()
-        out = Path(output_dir or cfg.get_default_out(self.name)).resolve()
+        app_cfg = get_config()
+        out = Path(output_dir or app_cfg.get_default_out(self.name)).resolve()
         out.mkdir(parents=True, exist_ok=True)
 
-        logging.basicConfig(
-            level=logging.INFO,
-            format="%(asctime)s %(levelname)s %(message)s",
+        _setup_logging(out)
+
+        db_path = out / "crawl.db"
+        if not resume and db_path.exists():
+            db_path.unlink()
+            log.info("removed existing crawl.db (use resume=True to continue a previous run)")
+
+        cfg = Config(
+            out_dir=str(out),
+            request_delay=delay,
+            max_pages=max_pages,
+            respect_robots=respect_robots,
+            max_hops_outside=max_hops_outside,
         )
 
         try:
-            crawler = Crawler(
-                out,
-                max_depth=max_depth,
-                concurrency=concurrency,
-                delay_s=delay,
-                include_docs=include_docs,
-                max_pages=max_pages,
-                pdf_backend=pdf_backend,
-            )
-            if resume:
-                n, retry = load_visited(out, crawler)
-                log.info("resume: %d done URLs skipped, %d errored will retry", n, retry)
-
-            run_seeds = seeds if seeds else config.SEEDS
-            asyncio.run(crawler.run(run_seeds))
-            log.info("done. kept=%d", crawler.kept)
+            crawler = Crawler(cfg)
+            counts = crawler.run()
+            crawler.close()
+            log.info("done. done=%d total=%d", counts.get("done", 0), counts.get("total", 0))
 
             try:
-                from .process import build_xlsx
                 xlsx = build_xlsx(out)
                 if xlsx:
                     log.info("xlsx -> %s", xlsx)
@@ -70,4 +76,5 @@ class WtoSiteCrawler(BaseCrawler):
 
             return CrawlResult(success=True, output_dir=str(out))
         except Exception as exc:
+            log.exception("crawl failed")
             return CrawlResult(success=False, output_dir=str(out), error=str(exc))

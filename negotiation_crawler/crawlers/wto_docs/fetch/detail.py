@@ -137,7 +137,8 @@ def enumerate_detail(
     with httpx.Client(headers={"User-Agent": UA},
                       follow_redirects=True, timeout=90.0, trust_env=False) as c:
         h     = c.get(url).text
-        tot   = int(TOTAL_RE.search(h).group(1)) if TOTAL_RE.search(h) else 0
+        m = TOTAL_RE.search(h)
+        tot = int(m.group(1)) if m else 0
         pages = max(1, math.ceil(tot / 10))
         print(f"  total={tot} (~{pages} pages)")
         page  = 0

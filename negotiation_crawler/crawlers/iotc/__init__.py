@@ -26,6 +26,7 @@ class IotcCrawler(BaseCrawler):
         all_langs: bool = False,
         limit: int | None = None,
         only: str | None = None,
+        pdf_dir: str | None = None,   # override default {out}/pdfs/
         **_extra,
     ) -> CrawlResult:
         from .fetch.crawler import build_manifest, enrich_metadata, download_pdfs
@@ -36,9 +37,9 @@ class IotcCrawler(BaseCrawler):
         out = Path(output_dir or cfg.get_default_out(self.name)).resolve()
         out.mkdir(parents=True, exist_ok=True)
 
-        db_path   = out / "manifest.sqlite"
-        pdf_dir   = out / "pdfs"
-        xlsx_path = out / "index.xlsx"
+        db_path        = out / "manifest.sqlite"
+        resolved_pdfs  = Path(pdf_dir).resolve() if pdf_dir else out / "pdfs"
+        xlsx_path      = out / "index.xlsx"
 
         try:
             xlsx_only = build_xlsx and not enrich and not list_only
@@ -53,7 +54,7 @@ class IotcCrawler(BaseCrawler):
 
             if not list_only and not xlsx_only:
                 log.info("=== Phase 3: download PDFs ===")
-                download_pdfs(db_path=db_path, pdf_dir=pdf_dir,
+                download_pdfs(db_path=db_path, pdf_dir=resolved_pdfs,
                               limit=limit, doc_type_filter=only)
 
             if build_xlsx or list_only:

@@ -91,7 +91,8 @@ def enumerate_series(
     with httpx.Client(headers={"User-Agent": UA},
                       follow_redirects=True, timeout=90.0) as c:
         html  = c.get(url).text
-        total = int(TOTAL_RE.search(html).group(1)) if TOTAL_RE.search(html) else 0
+        total_match = TOTAL_RE.search(html)
+        total = int(total_match.group(1)) if total_match else 0
         pages = max(1, math.ceil(total / 10))
         print(f"  total={total} (~{pages} pages)")
         page  = 0

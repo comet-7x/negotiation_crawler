@@ -174,6 +174,7 @@ def write_xlsx(rows: list[dict], path: Path) -> None:
 
     wb = openpyxl.Workbook()
     ws_all = wb.active
+    assert ws_all is not None
     ws_all.title = "全部"
     _write_sheet(ws_all, rows)
 
@@ -183,7 +184,7 @@ def write_xlsx(rows: list[dict], path: Path) -> None:
     bodies.sort(key=lambda b: body_order.index(b) if b in body_order else 99)
     for body in bodies:
         subset = [r for r in rows if r["body"] == body]
-        raw    = SERIES_ZH.get(body, body)
+        raw    = str(SERIES_ZH.get(body, body) or "")
         # openpyxl forbids / \ ? * [ ] : in sheet names; max 31 chars
         for ch in r"/\?*[]:'":
             raw = raw.replace(ch, "-")

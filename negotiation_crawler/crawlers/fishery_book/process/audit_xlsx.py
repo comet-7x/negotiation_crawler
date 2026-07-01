@@ -63,6 +63,7 @@ def build_audit_xlsx(records: list[BookRecord], out_path: Path) -> Path:
 
     # ---- main sheet ----
     ws = wb.active
+    assert ws is not None
     ws.title = "Audit"
     ws.freeze_panes = "A2"
 
@@ -80,9 +81,9 @@ def build_audit_xlsx(records: list[BookRecord], out_path: Path) -> Path:
             value = getattr(rec, attr)
             if attr == "status":
                 value = rec.status.value
-            if attr == "size_kb" and value is not None:
+            elif attr == "size_kb" and value is not None:
                 value = round(value, 1)
-            if attr == "match_score" and value is not None:
+            elif attr == "match_score" and value is not None:
                 value = round(value, 1)
 
             cell = ws.cell(row=row_idx, column=col_idx, value=value)

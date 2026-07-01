@@ -63,11 +63,11 @@ def _parse_listing(html: str) -> list[dict]:
             ref = tds[0].text(strip=True)
             links = tr.css("a")
             landing = next(
-                (a for a in links if not a.attributes.get("href", "").lower().endswith(".pdf")),
+                (a for a in links if not ((a.attributes.get("href") or "").lower().endswith(".pdf"))),
                 None,
             )
             pdf = next(
-                (a for a in links if a.attributes.get("href", "").lower().endswith(".pdf")),
+                (a for a in links if (a.attributes.get("href") or "").lower().endswith(".pdf")),
                 None,
             )
             if pdf is None:

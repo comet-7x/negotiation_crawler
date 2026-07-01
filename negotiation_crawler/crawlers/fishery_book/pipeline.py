@@ -56,6 +56,7 @@ async def _resolve_seed_inner(
         if seed.item_uuid:
             item = await dspace.get_item_with_files(seed.item_uuid)
         else:
+            assert seed.handle is not None
             resolved = await dspace.resolve_handle(seed.handle)
             if resolved is None:
                 return _miss(seed, Status.MISSING, f"pinned handle {seed.handle} did not resolve")
